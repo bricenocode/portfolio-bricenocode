@@ -1,0 +1,169 @@
+---
+import PillButtonGit from "./PillButtonGit.astro";
+import PillButtonLink from "./PillButtonLink.astro";
+
+const projects = [
+{
+    title: "Administrador de Citas",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+    link: "https://administradorcitaveterinaria.netlify.app/",
+    repository: "",
+    img: "shotCitaVeterinaria",
+    tags: [
+    {
+      name:"HTML",
+      color:"bg-orange-400",
+      logo:'Html'
+      },
+      {
+      name:"JAVASCRIPT",
+      color:"bg-yellow-400",
+      logo:'Javascript'
+      },
+      {
+      name:"TAILWIND",
+      color:"bg-cyan-600",
+      logo:'Tailwind'
+      }],
+  },
+  {
+    title: "FullStack Adminstrador de Productos ",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+    link: "https://rest-api-ts-frontend-lyart.vercel.app/",
+    repository: "https://github.com/bricenocode/rest_api_ts_frontend",
+    img: "shotadministradorProductos",
+    tags: [
+      {
+      name:"PostgreSQL",
+      color:"bg-blue-600",
+      logo:'Postgreesql'
+      },
+      {
+      name:"NODE",
+      color:"bg-green-300",
+      logo:'Node'
+      },
+      {
+      name:"REACT",
+      color:"bg-sky-300",
+      logo:'React'
+      },
+      {name:"TYPESCRIPT",
+      color:"bg-blue-600",
+      logo:'Typescript'
+      },
+      {
+      name:"TAILWIND",
+      color:"bg-cyan-600",
+      logo:'Tailwind'
+      }],
+  },
+  {
+    title: "Buscador de Recetas de Bebidas",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+    link: "https://drinksappbybricenodev.netlify.app",
+    repository: "https://github.com/bricenocode/bebidasReactTS",
+    img: "shotBebidaReact",
+    tags: [
+      {name:"REACT",
+      color:"bg-sky-300",
+      logo:'React'
+      },
+      {name:"TYPESCRIPT",
+      color:"bg-blue-600",
+      logo:'Typescript'
+      },
+      {name:"Tailwind",
+      color:"bg-cyan-600",
+      logo:'Tailwind'
+      },
+    ]
+  },
+  {
+    title: "Naruto One Page Web",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+    link: "https://narutobybricenodev.netlify.app/",
+    repository: "https://github.com/bricenocode/NarutoOnePageWeb",
+    img: "shotNaruto16_9",
+    tags: [
+      {name:"HTML",
+      color:"bg-orange-400",
+      logo:'Html'
+      },
+      {
+      name:"CSS",
+      color:"bg-blue-400",
+      logo:'Css'
+      }],
+  },
+];
+---
+
+<div class="flex flex-col gap-x-10">
+  {
+    projects.map(project => (
+      <div class=" flex flex-col justify-start mx-auto items-center rounded p-5 md:flex-row gap-3 xl:w-[1000px]">
+        <div
+          class="group relative w-[300px] h-[180px] overflow-hidden rounded-xl shadow-lg transition-all duration-300 ease-in-out sm:w-[400px] sm:h-[250px] md:w-[750px] md:h-[250px]"
+        >
+          <div class="card w-full h-full bg-balck rounded-xl transition-transform duration-300 ease-in-out">
+            <img
+              src={`./public/${project.img}.webp`}
+              alt="Imagen de ejemplo"
+              class="image w-full h-full object-cover transition-transform duration-300 ease-in-out rounded-xl"
+            />
+          </div>
+        </div>
+        <div class="max-w-[340px] lg:max-w-[500px] flex flex-col flex-wrap gap-2">
+          <h2 class="text-white text-opacity-90 font-semibold text-xl md:text-2xl">{project.title}</h2>
+          <div class="flex gap-2 flex-wrap">
+            {project.tags.map( tag => (
+            <div class={`flex items-center gap-2 rounded-md py-0.5 px-1.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm ${tag.color}`}
+            > 
+            <img src={`./public/${tag.logo}.svg`} class="text-white" alt="">
+            <p class="text-black">
+              {tag.name} 
+            </p>
+            </div>
+          ))}
+          </div>
+          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+            {project.description}
+          </p>
+          <div>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener"
+            >
+              <PillButtonLink>Visitar</PillButtonLink>
+            </a>
+            { project.repository && (
+            <a
+              href={project.repository}
+              target="_blank"
+              rel="noopener"
+            >
+              <PillButtonGit>Repositorio</PillButtonGit>
+            </a>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  /* Configuración para el efecto de zoom y expansión */
+  .group:hover .image {
+    transform: scale(1.1); /* Zoom de la imagen */
+  }
+  .group:hover .card {
+    transform: scale(1.05); /* Expansión del contenedor */
+  }
+</style>

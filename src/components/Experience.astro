@@ -1,0 +1,46 @@
+---
+
+const experiencie = [
+  {
+      date: 'Actualmente',
+      title: 'Desarrollo Web',
+      description: 'Estoy fortaleciendo mis habilidades como desarrollador web full stack, dominando tanto el frontend como el backend. Mi objetivo es convertirme en un profesional versátil y altamente capacitado, capaz de enfrentar cualquier desafío tecnológico. Con una mentalidad de aprendizaje continuo y un enfoque en la excelencia técnica, me preparo para aportar valor inmediato a cualquier empresa que confíe en mi potencial. 🚀'
+    },
+  {
+    date: ' Julio de 2023 — Junio de 2024',
+    title: 'Jysk Logistic',
+    description: 'En Jysk, gestioné el almacén completo, asegurando la recepción y manipulación de mercancía con transpaletas eléctricas, manuales y toros de carga, cumpliendo con la prevención de riesgos laborales. Como responsable de tienda, desarrollé mis habilidades de liderazgo, gestión de equipos y multitarea, asegurando el cumplimiento de objetivos y plazos establecidos, mientras optimizaba la resolución de problemas de forma ágil y eficaz.'
+  },
+  {
+    date: 'Abril 2023 - Julio 2023',
+    title: 'Grupo Planeta',
+    description: 'Durante mi etapa como comercial, mejoré mis habilidades de comunicación y persuasión, aprendiendo a adaptarme a las necesidades de diferentes tipos de clientes. Esta experiencia me enseñó a trabajar por objetivos de ventas y a ser más resiliente frente a los desafíos comerciales.'
+  },
+  {
+    date: 'Noviembre 2019 — Diciembre 2021',
+    title: 'Encargado de Tienda',
+    description: 'Como operario, aprendí a manejar los procesos operativos del restaurante y a trabajar en equipo. Cuando asumí el cargo de encargado de tienda, desarrollé mis habilidades de liderazgo y mejoré mi capacidad de gestión de equipos, guiando al equipo para lograr los objetivos diarios. También adquirí experiencia en la gestión de inventarios y la organización interna del restaurante, incluyendo la creación de turnos de trabajo para optimizar la operativa. Esta posición me permitió reforzar mi capacidad para resolver conflictos, tomando decisiones rápidas para mantener la eficiencia y el buen ambiente laboral.'
+  },
+  {
+    date: 'Marzo 2019 - Octubre 2019',
+    title: 'Repartidor en Amazon',
+    description: 'En esta experiencia tuve mi primer contacto con la atención al cliente, lo que me permitió desarrollar un fuerte sentido de urgencia para cumplir con los plazos de entrega. Aprendí a resolver problemas de forma rápida y eficaz, adaptándome a situaciones imprevistas y garantizando siempre la satisfacción del cliente.'
+  },
+  ]
+
+---
+<ol class="relative border-s border-green-400 dark:border-green-400">                  
+    {experiencie.map( experience => (
+      <li class="mb-10 ms-4">
+      <div class="absolute w-3 h-3 bg-green-400 rounded-full mt-1.5 -start-1.5 border border-green-900 dark:border-green-900 dark:bg-green-400"></div>
+      <time class="mb-1 text-sm font-normal leading-none text-green-400 dark:text-green-300">{experience.date}</time>
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{experience.title}</h3>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+        {experience.description}
+      </p>
+      </li>
+    ))}
+</ol>
+
+
+
