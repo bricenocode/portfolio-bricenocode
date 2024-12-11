@@ -1,65 +1,108 @@
 ---
-import Footer from "../components/Footer.astro"
-import Header from "../components/Header"
- 
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
 interface Props {
-	title: string
+  title: string;
 }
 
-const {title } = Astro.props
-
-
-
+const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="./3.webp" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Geist+Mono:wght@100..900&family=Oswald:wght@200..700&family=Parkinsans:wght@300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-	</head>
-	<body>
+  <head>
+    <!-- Primary Meta Tags -->
+    <title>Portfolio - BricenoCode</title>
+    <meta name="title" content="Portfolio - BricenoCode" />
+    <meta
+      name="description"
+      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
+    />
 
-		<Header client:load/>
-			<slot />
-		<Footer/>
-		
-		
-		
-			
-			
-	</body>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bricenocode.netlify.app/" />
+    <meta property="og:title" content="Portfolio - BricenoCode" />
+    <meta
+      property="og:description"
+      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
+    />
+    <meta
+      property="og:image"
+      content="./me.webp"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bricenocode.netlify.app/" />
+    <meta property="twitter:title" content="Portfolio - BricenoCode" />
+    <meta
+      property="twitter:description"
+      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
+    />
+    <meta
+      property="twitter:image"
+      content="https://bricenocode.netlify.app/"
+    />
+
+    <meta name="title" content="Portfolio - BricenoCode" />
+    <meta
+      name="description"
+      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
+    />
+    <meta
+      name="keywords"
+      content="portfolio, portafolio, programación, javascript, react, html, css. typescript, nodejs, postgresql, mongodb, astro, tailwind, desarrollo web, desarrollo"
+    />
+    <meta name="language" content="Spanish" />
+    <meta name="author" content="bricenocode" />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/147144442?s=400&u=4ae555345638b47f468f1b3fa44f2631201ab498&v=4"
+    />
+    <meta property="og:url" content="https://bricenocode.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="./3.webp" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Geist+Mono:wght@100..900&family=Oswald:wght@200..700&family=Parkinsans:wght@300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header/>
+    <slot />
+    <Footer />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		color-scheme: light dark;
-	}
-	html{
-		font-family: "Parkinsans", sans-serif;
-		scroll-behavior: smooth;
-		
-	}
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "Parkinsans", sans-serif;
+    scroll-behavior: smooth;
+  }
 
-	body {
-		display: flex;
-		flex-direction:column;
-		background: -webkit-linear-gradient(180deg, #000000,#031414,#0b3131);
-		background: linear-gradient(180deg, #000000,#031414,#052423);
-		min-height: 100vh;
+  body {
+    display: flex;
+    flex-direction: column;
+    background: -webkit-linear-gradient(180deg, #000000, #031414, #0b3131);
+    background: linear-gradient(180deg, #000000, #031414, #052423);
+    min-height: 100vh;
+  }
 
-	}
-
-	/* Si alguien desactivo esta opcion que no haga la animación */
-	@media (prefers-reduce-motion: reduce){
-		html{
-			scroll-behavior: auto;
-		}
-	}
+  /* Si alguien desactivo esta opcion que no haga la animación */
+  @media (prefers-reduce-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 </style>
-

@@ -6,7 +6,7 @@ const projects = [
 {
     title: "Administrador de Citas",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+      "Agenda de Pacientes de Veterinaria, desarrollada y aprendida en el curso de JavaScript Moderno impartido por Juan Pablo de la Torre. En este proyecto, aprendimos a crear un CRUD con buenas prácticas en JavaScript, así como a manejar de forma correcta el DOM.",
     link: "https://administradorcitaveterinaria.netlify.app/",
     repository: "",
     img: "shotCitaVeterinaria",
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "FullStack Adminstrador de Productos ",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+      "Realizado con el stack PERN. Se utilizó Express, Node.js y Nodemon para la creación de la REST API, con enrutamiento mediante Express. Las pruebas se realizaron con SuperTest y la documentación se generó con Swagger. El frontend se desarrolló con React, Zod, Zustand y otras tecnologías.",
     link: "https://rest-api-ts-frontend-lyart.vercel.app/",
     repository: "https://github.com/bricenocode/rest_api_ts_frontend",
     img: "shotadministradorProductos",
@@ -63,7 +63,7 @@ const projects = [
   {
     title: "Buscador de Recetas de Bebidas",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+      "Realizado en el curso de React de Juan Pablo de la Torre, en el cual utilizamos React Routing y Zustand con el patrón Slice Pattern para el manejo de múltiples estados. También utilizamos Zod para validar las peticiones de la API, lo que nos permitió un mejor desarrollo e inferencia de tipos con TypeScript. Además, empleamos librerías de componentes como Headless UI y otras dependencias.",
     link: "https://drinksappbybricenodev.netlify.app",
     repository: "https://github.com/bricenocode/bebidasReactTS",
     img: "shotBebidaReact",
@@ -85,7 +85,7 @@ const projects = [
   {
     title: "Naruto One Page Web",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ratione iste, molestiae iuri cum quasi ea reiciendis cupiditate dolore temporibus architecto at, impedi",
+      "Mi primera página, creada con conocimientos básicos de HTML y CSS, se encuentra en este portafolio por ser el punto de partida desde donde comencé. Fue realizada como proyecto del primer curso del ciclo de DAW.",
     link: "https://narutobybricenodev.netlify.app/",
     repository: "https://github.com/bricenocode/NarutoOnePageWeb",
     img: "shotNaruto16_9",
@@ -103,35 +103,35 @@ const projects = [
 ];
 ---
 
-<div class="flex flex-col gap-x-10">
+<div class="flex flex-col justify-center items-center md:gap-x-10">
   {
     projects.map(project => (
-      <div class=" flex flex-col justify-start mx-auto items-center rounded p-5 md:flex-row gap-16 xl:w-[1000px]">
+      <div class="w-[320px] sm:w-[600px] md:w-[700px] xl:w-[1200px] flex flex-col justify-start mx-auto items-center rounded p-5 md:flex-row gap-5  xl:gap-16 ">
         <div
-          class="group w-[250px] h-[180px]  overflow-hidden rounded-xl shadow-lg transition-all duration-300 ease-in-out sm:w-[400px] sm:h-[250px] md:w-[750px] md:h-[250px]"
+          class="group w-[220px] h-[170px]  overflow-hidden rounded-xl shadow-lg transition-all duration-300 ease-in-out sm:w-[400px] sm:h-[250px] md:w-[500px] md:h-[250px]"
         >
-          <div class="card w-full h-full bg-balck rounded-xl transition-transform duration-300 ease-in-out">
+          <div class="card w-full h-full bg-balck rounded-xl transition-transform duration-300 ease-in-out"  >
             <img
               src={`./${project.img}.webp`}
               alt="Imagen de ejemplo"
-              class="image w-full h-full object-cover transition-transform duration-300 ease-in-out rounded-xl"
+              class="image w-[350px] h-[200px] sm:h-auto sm:w-[300px] md:w-[500px] transition-transform duration-300 ease-in-out rounded-xl object-cover "
             />
           </div>
         </div>
-        <div class="max-w-[340px] lg:max-w-[500px] flex flex-col flex-wrap gap-2">
+        <div class="max-w-[350px] sm:max-w-[500px] md:max-w-[500px] lg:max-w-[600px] flex flex-col flex-wrap gap-2">
           <h2 class="text-white text-opacity-90 font-semibold text-xl md:text-2xl">{project.title}</h2>
           <div class="flex gap-2 flex-wrap">
             {project.tags.map( tag => (
-            <div class={`flex items-center gap-2 rounded-md py-0.5 px-1.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm ${tag.color}`}
+            <div class={`flex items-center gap-2 max-h-5 rounded-md py-0.5 px-1.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm ${tag.color}`}
             > 
-            <img src={`./${tag.logo}.svg`} class="text-white" alt="">
+            <img src={`./${tag.logo}.svg`} class="text-white max-w-4" alt="">
             <p class="text-black">
               {tag.name} 
             </p>
             </div>
           ))}
           </div>
-          <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+          <p class="mb-4 text-base max-w-[600px] sm:max-w-[330px] md:max-w-[400px] font-normal text-gray-500 dark:text-gray-400">
             {project.description}
           </p>
           <div>
