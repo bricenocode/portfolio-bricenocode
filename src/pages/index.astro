@@ -1,101 +1,60 @@
 ---
-import Badge from "../components/Badge.astro";
-import GitHubIcon from "../Icons/GitHubIcon.astro";
-import InstagramIcon from "../Icons/InstagramIcon.astro";
-import SocialPill from "../Icons/SocialPill.astro";
-import LinkdinIcon from "../Icons/LinkdinIcon.astro";
 import Layout from "../layouts/Layout.astro";
-import GmailIcon from "../Icons/GmailIcon.astro";
-import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
-import BriefCase from "../Icons/BriefCase.astro";
-import CardProject from "../components/CardProject.astro";
-import ProjectsIcon from "../Icons/ProjectsIcon.astro";
 import About from "../components/About.astro";
-import Info from "../Icons/Info.astro";
+import SocialPill from "../Icons/SocialPill.astro";
+import InstagramIcon from "../Icons/InstagramIcon.astro";
+import LinkdinIcon from "../Icons/LinkdinIcon.astro";
+import GitHubIcon from "../Icons/GitHubIcon.astro";
+import GmailIcon from "../Icons/GmailIcon.astro";
+import TechCarousel from "../components/TechCarousel.astro";
+import Experience from "../components/Experience.astro";
+import CardProject from "../components/CardProject.astro";
+import { uiData } from "../constants/languages.js";
 ---
 
-<Layout title="Bricenocode Portfolio - Desarrollador y Programador Web">
-  <main class="mx-9">
-    <SectionContainer id="main" class="py-10 pb-16 mx-5 lg:mx-auto flex flex-col justify-start items-center">
-      <div class="flex items-center space-x-6 flex-col sm:flex-row">
-        <img
-          class="rounded-full size-40 mb-5 rotate-12"
-          src="https://avatars.githubusercontent.com/u/147144442?s=400&u=4ae555345638b47f468f1b3fa44f2631201ab498&v=4"
-          alt=""
-        />
-				<div class="flex flex-col items-start">
-					<h1
-						class="text-white text-xl sm:text-xl lg:text-3xl font-bold flex flex-col justify-start md:flex-row gap-2 mt-3 pb-4"
-					>
-						BRICENOCODE 💻
-					</h1>
-					<a
-						href="https://www.linkedin.com/in/bricenodev/"
-						target="_blank"
-						rel="noopener"
-						class="flex justify-center items-center"
-					>
-						<Badge> ¿Que vamos a desarrollar? </Badge>
-					</a>
-				</div>
+<Layout title="BRICENOCODE | Backend Software Engineer">
+  <main class="w-full" id= "main">
+    
+    <About />
+
+    <div class="flex justify-center gap-4 flex-wrap px-4 mb-24">
+      <SocialPill href="https://github.com/bricenocode/"><GitHubIcon class="size-5" /> GitHub</SocialPill>
+      <SocialPill href="https://www.linkedin.com/in/bricenodev/"><LinkdinIcon class="size-5" /> LinkedIn</SocialPill>
+      <SocialPill href="https://www.instagram.com/migueldbg_/"><InstagramIcon class="size-5" /> Instagram</SocialPill>
+    </div>
+
+    <section id = "skills" class="w-full bg-white/5 py-20 border-y border-white/5">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-center text-white text-3xl font-black uppercase tracking-tighter mb-12">
+          <span id="tech-title-white"></span> <span id="tech-title-green" class="text-green-500"></span>
+        </h2>
+        <TechCarousel />
       </div>
-			
-						<h2 class="text-md sm:text-xl text-wrap opacity-80 max-w-[800px] text-white mt-3 mr-6">
-							Tengo <span class="text-green-400"> +1 año experiencia </span> en código.
-							Desarrollador Web Junior. De <span class="text-violet-400"
-								>Madrid, España</span
-							>. Listo para picar código!
-						</h2>
-			
-      <nav class="flex gap-2 my-5 flex-wrap text-white text-sm sm:text-md">
-        <SocialPill href="https://www.instagram.com/migueldbg_/">
-          <InstagramIcon class="size-6 rounded-full" />
-          Instagram
-        </SocialPill>
-        <SocialPill href="https://www.linkedin.com/in/bricenodev/">
-          <LinkdinIcon class="size-6 rounded-full" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/bricenocode">
-          <GitHubIcon class="size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill href="mailto:miguelbricenocode@gmail.com">
-          <GmailIcon class="size-6 flex-grow" />
-          Email
-        </SocialPill>
-      </nav>
+    </section>
+
+    <SectionContainer id="experience" class="py-20 px-10">
+       <h2 id="title-experience" class="text-white text-2xl font-bold uppercase mb-12 border-b border-green-500/30 pb-4 inline-block"></h2>
+       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="about">
-      <h2
-        class="text-2xl font-semibold mb-6 flex gap-3 items-center text-white"
-      >
-        <Info class="size-8" />
-        Sobre mi
-      </h2>
-      <About />
+    <SectionContainer id="projects" class="py-20 px-4">
+       <h2 id="title-projects" class="text-white text-2xl font-bold uppercase mb-12 border-b border-green-500/30 pb-4 inline-block"></h2>
+       <CardProject />
     </SectionContainer>
 
-    <SectionContainer id="experience">
-      <h2
-        class="text-2xl font-semibold mb-6 flex gap-3 items-center text-white"
-      >
-        <BriefCase class="size-8" />
-        Experiencia Profesional
-      </h2>
-      <Experience />
-    </SectionContainer>
-
-    <SectionContainer id="projects" class='lg:w-[1200px]"'>
-      <h2
-        class="text-2xl font-semibold mb-6 flex gap-3 items-center text-white"
-      >
-        <ProjectsIcon class="size-8" />
-        Proyectos
-      </h2>
-      <CardProject />
-    </SectionContainer>
   </main>
 </Layout>
+
+<script define:vars={{ uiData }}>
+  function updateIndex(lang) {
+    const data = uiData[lang];
+    document.getElementById('title-experience').textContent = data.sections.exp;
+    document.getElementById('title-projects').textContent = data.sections.projects;
+    const techWords = data.tech.title.split(' ');
+    document.getElementById('tech-title-white').textContent = techWords[0];
+    document.getElementById('tech-title-green').textContent = techWords.slice(1).join(' ');
+  }
+  window.addEventListener('langChanged', (e) => updateIndex(e.detail));
+  updateIndex(localStorage.getItem('pref-lang') || 'en');
+</script>
