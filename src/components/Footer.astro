@@ -9,31 +9,36 @@ import { uiData } from "../constants/languages.js";
 const date = new Date();
 ---
 
-<footer class="w-full xl:w-[1120px] mx-auto rounded-lg shadow m-4">
+<footer class="w-full xl:w-[1120px] mx-auto rounded-lg shadow m-4 mt-16">
   <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-    <div class="md:flex sm:items-center sm:justify-between">
-      <a href="https://github.com/bricenocode" class="flex items-center mb-4 sm:mb-0 space-x-1" target="_blank" rel="noopener">
-        <img src="./3.webp" class="size-9 sm:size-16" alt="Bricenocode Logo" />
-        <span class="self-center text-sm sm:text-2xl font-semibold whitespace-nowrap text-white">BRICENOCODE</span>
+    <div class="flex flex-col items-center md:flex-row md:justify-between gap-6 md:gap-0">
+      
+      <a href="https://github.com/bricenocode" class="flex items-center space-x-2 group" target="_blank" rel="noopener">
+        <img src="./3.webp" class="size-10 md:size-14 transition-transform group-hover:scale-110" alt="Bricenocode Logo" />
+        <span class="self-center text-xl md:text-2xl font-bold whitespace-nowrap text-white tracking-tighter">
+          BRICENO<span class="text-green-500">CODE</span>
+        </span>
       </a>
       
-      <ul class="flex flex-wrap items-center mb-6 text-[10px] sm:text-[15px] font-medium text-white sm:mb-0">
-        <li><a href="#main" id="footer-main" class="hover:underline me-4 md:me-6"></a></li>
-        <li><a href="#skills" id="footer-skills" class="hover:underline me-4 md:me-6"></a></li>
-        <li><a href="#experience" id="footer-exp" class="hover:underline me-4 md:me-6"></a></li>
-        <li><a href="#projects" id="footer-projects" class="hover:underline me-4 md:me-6"></a></li>
+      <ul class="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 text-[12px] md:text-[15px] font-medium text-slate-400">
+        <li><a href="#main" id="footer-main" class="hover:text-green-400 transition-colors"></a></li>
+        <li><a href="#skills" id="footer-skills" class="hover:text-green-400 transition-colors"></a></li>
+        <li><a href="#experience" id="footer-exp" class="hover:text-green-400 transition-colors"></a></li>
+        <li><a href="#projects" id="footer-projects" class="hover:text-green-400 transition-colors"></a></li>
       </ul>
     </div>
 
-    <nav class="flex gap-2 my-5 flex-wrap justify-center space-x-3">
-      <SocialPill href="https://www.instagram.com/migueldbg_/"><InstagramIcon class="size-6 rounded-full" /></SocialPill>
-      <SocialPill href="https://www.linkedin.com/in/bricenodev/"><LinkdinIcon class="size-6 rounded-full text-white" /></SocialPill>
-      <SocialPill href="https://github.com/bricenocode"><GitHubIcon class="size-6" /></SocialPill>
+    <nav class="flex justify-center items-center gap-4 my-8">
+      <SocialPill href="https://www.instagram.com/migueldbg_/"><InstagramIcon class="size-5 text-white/70 hover:text-green-400 transition-colors" /></SocialPill>
+      <SocialPill href="https://www.linkedin.com/in/bricenodev/"><LinkdinIcon class="size-5 text-white/70 hover:text-green-400 transition-colors" /></SocialPill>
+      <SocialPill href="https://github.com/bricenocode"><GitHubIcon class="size-5 text-white/70 hover:text-green-400 transition-colors" /></SocialPill>
+      <SocialPill href="mailto:miguelbricenocode@gmail.com"><GmailIcon class="size-5 text-white/70 hover:text-green-400 transition-colors" /></SocialPill>
     </nav>
 
-    <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
-    <span class="block text-sm text-gray-400 sm:text-center">
-      © {date.getFullYear()}. <span id="footer-rights"></span>
+    <hr class="my-6 border-white/10 sm:mx-auto lg:my-8" />
+    
+    <span class="block text-xs md:text-sm text-slate-500 text-center">
+      © {date.getFullYear()}. <span id="footer-rights" class="font-medium"></span>
     </span>
   </div>
 </footer>
@@ -43,8 +48,7 @@ const date = new Date();
     const nav = uiData[lang].nav;
     const rights = uiData[lang].footer.rights;
     
-    // Corregido: Los IDs deben coincidir con los definidos arriba
-    document.getElementById('footer-main').textContent = nav.home; // Usamos nav.home para el anclaje #main
+    document.getElementById('footer-main').textContent = nav.home;
     document.getElementById('footer-skills').textContent = nav.skills;
     document.getElementById('footer-exp').textContent = nav.exp;
     document.getElementById('footer-projects').textContent = nav.projects;
@@ -52,8 +56,6 @@ const date = new Date();
   }
 
   window.addEventListener('langChanged', (e) => updateFooter(e.detail));
-  
-  // Inicialización
   const currentLang = localStorage.getItem('pref-lang') || 'en';
   updateFooter(currentLang);
 </script>
