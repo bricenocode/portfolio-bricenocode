@@ -1,0 +1,152 @@
+---
+const technologies = [
+  { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+  { name: 'Spring Boot', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+  { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+  { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+  { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+  { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
+  { name: 'PowerShell', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg' },
+];
+
+const tripleTechs = [...technologies, ...technologies, ...technologies];
+---
+
+<div class="group relative w-full max-w-5xl mx-auto px-4 select-none">
+  <button id="prev-btn" class="absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-black/60 border border-white/10 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-green-500 hover:text-black hidden md:block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+  </button>
+
+  <div 
+    id="carousel-container" 
+    class="flex overflow-hidden gap-6 md:gap-8 py-12 cursor-grab active:cursor-grabbing touch-none"
+  >
+    {tripleTechs.map((tech) => (
+      <div class="tech-item flex-none w-28 md:w-32 flex flex-col items-center justify-center transition-all duration-300">
+        <div class="tech-card relative p-5 bg-slate-900/50 rounded-2xl border border-white/5 shadow-xl transition-all duration-500">
+          <img src={tech.icon} alt={tech.name} class="tech-icon h-12 w-12 md:h-14 md:w-14 grayscale transition-all duration-500 transform scale-90 pointer-events-none" draggable="false" />
+        </div>
+        <span class="tech-label mt-4 text-green-400 text-[10px] font-bold uppercase tracking-widest opacity-0 transition-all duration-300 translate-y-2 text-center w-full">
+          {tech.name}
+        </span>
+      </div>
+    ))}
+  </div>
+
+  <button id="next-btn" class="absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-black/60 border border-white/10 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-green-500 hover:text-black hidden md:block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+  </button>
+</div>
+
+<style>
+  .tech-item.is-active .tech-card {
+    border-color: rgba(74, 222, 128, 0.6);
+    background-color: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.25);
+    transform: translateY(-8px);
+  }
+  .tech-item.is-active .tech-icon { filter: grayscale(0); transform: scale(1.15); }
+  .tech-item.is-active .tech-label { opacity: 1; transform: translateY(0); }
+</style>
+
+<script>
+  const container = document.getElementById('carousel-container');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  let scrollLeft = 0;
+  let isDragging = false;
+  let startX = 0;
+  let dragX = 0;
+  let autoSpeed = 0.7; 
+  let currentSpeed = autoSpeed;
+
+  // Inicializar posición en el set del medio
+  const totalWidth = container.scrollWidth;
+  scrollLeft = totalWidth / 3;
+  container.scrollLeft = scrollLeft;
+
+  function updateActiveItem() {
+    const items = container.querySelectorAll('.tech-item');
+    const containerRect = container.getBoundingClientRect();
+    const centerX = containerRect.left + containerRect.width / 2;
+
+    items.forEach(item => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenter = itemRect.left + itemRect.width / 2;
+      const distance = Math.abs(centerX - itemCenter);
+      if (distance < 60) item.classList.add('is-active');
+      else item.classList.remove('is-active');
+    });
+  }
+
+  function animate() {
+    if (!isDragging) {
+      scrollLeft += currentSpeed;
+      
+      // Reset infinito: si llegamos al último tercio o al primero, saltamos al medio
+      if (scrollLeft >= (totalWidth * 2) / 3) {
+        scrollLeft = totalWidth / 3;
+      } else if (scrollLeft <= totalWidth / 3) {
+        // Para scroll inverso
+      }
+      
+      container.scrollLeft = scrollLeft;
+    }
+    updateActiveItem();
+    requestAnimationFrame(animate);
+  }
+
+  // --- INTERACCIÓN ---
+  const handleStart = (e) => {
+    isDragging = true;
+    startX = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
+    dragX = scrollLeft;
+  };
+
+  const handleMove = (e) => {
+    if (!isDragging) return;
+    const x = (e.pageX || e.touches[0].pageX) - container.offsetLeft;
+    const walk = (x - startX);
+    scrollLeft = dragX - walk;
+    container.scrollLeft = scrollLeft;
+  };
+
+  const handleEnd = () => {
+    isDragging = false;
+    // Ralentizar un poco el inicio del auto-scroll tras soltar
+    currentSpeed = 0;
+    setTimeout(() => { currentSpeed = autoSpeed; }, 1000);
+  };
+
+  // Listeners
+  container.addEventListener('mousedown', handleStart);
+  window.addEventListener('mousemove', handleMove);
+  window.addEventListener('mouseup', handleEnd);
+
+  container.addEventListener('touchstart', handleStart, { passive: true });
+  container.addEventListener('touchmove', handleMove, { passive: false });
+  container.addEventListener('touchend', handleEnd);
+
+  // Botones
+  const stepSize = 150;
+  nextBtn.addEventListener('click', () => {
+    scrollLeft += stepSize;
+    currentSpeed = 0;
+    setTimeout(() => { currentSpeed = autoSpeed; }, 2000);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    scrollLeft -= stepSize;
+    currentSpeed = 0;
+    setTimeout(() => { currentSpeed = autoSpeed; }, 2000);
+  });
+
+  // Lanzar animación
+  requestAnimationFrame(animate);
+</script>
