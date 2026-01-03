@@ -71,7 +71,7 @@ export const uiData = {
       title: "Miguel Briceño",
       description: "Ingeniero de Software Backend especializado en la construcción de arquitecturas robustas y escalables. Me enfoco en crear soluciones innovadoras que optimizan procesos de negocio a través de Java, Spring Boot y automatización.",
       p2: "Apasionado por el código limpio y la eficiencia de los sistemas. Transformo lógica de negocio compleja en aplicaciones de alto rendimiento, garantizando siempre la excelencia técnica y la fiabilidad.",
-      availability: "Sistemas activo para nuevos retos",
+      availability: "Disponible para nuevos retos",
       cvBtn: "Descargar CV",
       stats: {
         expTitle: "Años de Experiencia",
