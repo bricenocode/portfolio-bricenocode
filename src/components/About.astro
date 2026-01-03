@@ -1,27 +1,64 @@
 ---
+import { uiData } from "../constants/languages.js";
+---
+<section class="w-full max-w-5xl mx-auto px-4 py-12">
+  <div class="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+    
+    <div class="w-full lg:w-1/3 flex justify-center">
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-green-500/20 to-emerald-700/20 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
+        <div class="relative bg-slate-900 border border-white/10 rounded-3xl overflow-hidden aspect-square w-64 md:w-72 flex flex-col items-center justify-center p-6 shadow-2xl">
+          <img 
+            src="https://avatars.githubusercontent.com/u/147144442?v=4" 
+            alt="Bricenocode Logo" 
+            class="w-4/5 h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+          <span class="mt-4 text-[10px] text-green-400 font-mono tracking-[0.3em] uppercase opacity-70 font-bold">Backend Engineer</span>
+        </div>
+      </div>
+    </div>
 
---- 
+    <div class="w-full lg:w-2/3 text-center lg:text-left flex flex-col items-center lg:items-start">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 mb-6">
+        <span class="flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+        </span>
+        <span id="availability-text" class="text-green-400 text-[10px] font-bold uppercase tracking-widest"></span>
+      </div>
 
-
-<div class="w-auto flex  ml-2 flex-col md:flex-col lg:flex-row mb-10 justify-start">
-  
-  <div class="mr-20 relative">
-    <img
-    class=" rounded-lg min-w-[100px] w-[500px] h-auto md:w-[450px] z-10 drop-shadow-3xl ml-8"
-    src="./me.webp"
-    alt="image of myself"
-  />
-  </div>
-  <div class="w-full md:w-[50%] lg:[w-50%]">
-    <h1 class="text-white font-bold text-xl sm:text-3xl mt-8 mb-5 text-pretty">
-    👋 Mi nombre es Miguel Briceño 
-    </h1>
-
-    <p class="text-white w-full sm:text-xl sm:w-[35rem] md:w-[35rem] lg:w-[25rem] xl:w-[30rem] mb-10 text-opacity-80">
-      Un entusiasta de la <span class=" text-green-400 ">tecnología y el desarrollo web</span>. Actualmente, estoy finalizando mis estudios en <span class=" text-green-400 ">Desarrollo de Aplicaciones Web (DAW)</span>, donde he descubierto mi pasión por crear <span class="">aplicaciones dinámicas</span> y <span class="">soluciones innovadoras</span>. Me encanta aprender nuevas tecnologías y enfrentar <span class="">desafíos</span> que me permitan crecer tanto personal como profesionalmente.
-
-      Con experiencia en <span class="text-yellow-400">HTML</span>, <span class="text-yellow-400">CSS</span>, <span class="text-yellow-400">JavaScript</span>, <span class="text-yellow-400">React</span> y <span class="text-yellow-400">Node.js</span>, disfruto del proceso creativo de convertir ideas en <span class=" text-green-400 ">proyectos reales</span>. Me considero una persona proactiva,curiosa y comprometida con la mejora continua. Busco aportar mis habilidades en <span class=" text-green-400 ">proyectos que generen impacto</span>, mientras sigo desarrollándome como profesional.  <span class="text-yellow-400">¡Siempre estoy abierto a nuevas oportunidades y colaboraciones!</span>
+      <h1 id="about-title" class="text-white font-extrabold text-4xl md:text-6xl mb-6 tracking-tighter leading-none"></h1>
       
-    </p>
+      <div class="space-y-4 max-w-2xl">
+        <p id="about-p1" class="text-slate-300 text-lg md:text-xl leading-relaxed"></p>
+        <p id="about-p2" class="text-slate-400 text-sm md:text-base italic border-l-2 border-green-500/30 pl-4"></p>
+      </div>
+
+      <div class="flex flex-row justify-center lg:justify-start gap-10 md:gap-16 mt-10 pt-8 border-t border-white/10 w-full">
+        <div class="flex flex-col items-center lg:items-start">
+          <span class="text-white font-black text-3xl md:text-4xl">+2</span>
+          <span id="stat-exp-label" class="text-slate-500 text-[10px] uppercase font-bold tracking-widest"></span>
+        </div>
+        <div class="flex flex-col items-center lg:items-start">
+          <span id="stat-focus-label-large" class="text-white font-black text-3xl md:text-4xl uppercase tracking-tighter"></span>
+          <span id="stat-focus-value-small" class="text-slate-500 text-[10px] uppercase font-bold tracking-widest"></span>
+        </div>
+      </div>
+    </div>
   </div>
-</div> 
+</section>
+
+<script define:vars={{ uiData }}>
+  function render(lang) {
+    const data = uiData[lang].about;
+    document.getElementById('availability-text').textContent = data.availability;
+    document.getElementById('about-title').innerHTML = data.title.replace('Miguel Briceño', '<span class="text-green-500">Miguel Briceño</span>');
+    document.getElementById('about-p1').textContent = data.description;
+    document.getElementById('about-p2').textContent = data.p2;
+    document.getElementById('stat-exp-label').textContent = data.stats.expTitle;
+    document.getElementById('stat-focus-label-large').textContent = data.stats.focusLabel;
+    document.getElementById('stat-focus-value-small').textContent = data.stats.focusValue;
+  }
+  window.addEventListener('langChanged', (e) => render(e.detail));
+  render(localStorage.getItem('pref-lang') || 'en');
+</script>

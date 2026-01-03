@@ -1,197 +1,96 @@
 ---
 import PillButtonGit from "./PillButtonGit.astro";
 import PillButtonLink from "./PillButtonLink.astro";
+import { uiData } from "../constants/languages.js";
 
-const projects = [
-{
-    title: "DevTrack",
-    description:
-      "Administrador de tareas y proyectos de desarrolladores con opciones de colaboración y chat en tiempo real para la comunicación correcta, todo realizado mediante autenticación de token para mejorar la seguridad. Backend en SpringBoot",
-    link: "https://dev-track-zeta.vercel.app/",
-    repository: "",
-    img: "devTrack",
+const projectConfig = [
+  { id: 0, link: "https://dev-track-zeta.vercel.app/", repository: "", img: "devTrack",
     tags: [
-    {
-      name:"SpringBoot",
-      color:"bg-gray-300",
-      logo:'springBootLogo'
-      },
-        {
-      name:"REACT",
-      color:"bg-sky-300",
-      logo:'React'
-      },
-      {name:"TYPESCRIPT",
-      color:"bg-blue-600",
-      logo:'Typescript'
-      },
-      {
-      name:"TAILWIND",
-      color:"bg-cyan-600",
-      logo:'Tailwind'
-      }],
-  },
-{
-    title: "Administrador de Citas",
-    description:
-      "Agenda de Pacientes de Veterinaria, desarrollada y aprendida en el curso de JavaScript Moderno impartido por Juan Pablo de la Torre. En este proyecto, aprendimos a crear un CRUD con buenas prácticas en JavaScript, así como a manejar de forma correcta el DOM.",
-    link: "https://administradorcitaveterinaria.netlify.app/",
-    repository: "",
-    img: "shotCitaVeterinaria",
-    tags: [
-    {
-      name:"HTML",
-      color:"bg-orange-400",
-      logo:'Html'
-      },
-      {
-      name:"JAVASCRIPT",
-      color:"bg-yellow-400",
-      logo:'Javascript'
-      },
-      {
-      name:"TAILWIND",
-      color:"bg-cyan-600",
-      logo:'Tailwind'
-      }],
-  },
-  {
-    title: "FullStack Adminstrador de Productos ",
-    description:
-      "Realizado con el stack PERN. Se utilizó Express, Node.js y Nodemon para la creación de la REST API, con enrutamiento mediante Express. Las pruebas se realizaron con SuperTest y la documentación se generó con Swagger. El frontend se desarrolló con React, Zod, Zustand y otras tecnologías.",
-    link: "https://rest-api-ts-frontend-lyart.vercel.app/",
-    repository: "https://github.com/bricenocode/rest_api_ts_frontend",
-    img: "shotadministradorProductos",
-    tags: [
-      {
-      name:"PostgreSQL",
-      color:"bg-blue-600",
-      logo:'Postgreesql'
-      },
-      {
-      name:"NODE",
-      color:"bg-green-300",
-      logo:'Node'
-      },
-      {
-      name:"REACT",
-      color:"bg-sky-300",
-      logo:'React'
-      },
-      {name:"TYPESCRIPT",
-      color:"bg-blue-600",
-      logo:'Typescript'
-      },
-      {
-      name:"TAILWIND",
-      color:"bg-cyan-600",
-      logo:'Tailwind'
-      }],
-  },
-  {
-    title: "Buscador de Recetas de Bebidas",
-    description:
-      "Realizado en el curso de React de Juan Pablo de la Torre, en el cual utilizamos React Routing y Zustand con el patrón Slice Pattern para el manejo de múltiples estados. También utilizamos Zod para validar las peticiones de la API, lo que nos permitió un mejor desarrollo e inferencia de tipos con TypeScript. Además, empleamos librerías de componentes como Headless UI y otras dependencias.",
-    link: "https://drinksappbybricenodev.netlify.app",
-    repository: "https://github.com/bricenocode/bebidasReactTS",
-    img: "shotBebidaReact",
-    tags: [
-      {name:"REACT",
-      color:"bg-sky-300",
-      logo:'React'
-      },
-      {name:"TYPESCRIPT",
-      color:"bg-blue-600",
-      logo:'Typescript'
-      },
-      {name:"Tailwind",
-      color:"bg-cyan-600",
-      logo:'Tailwind'
-      },
+      { name: "SpringBoot", color: "bg-gray-300", logo: 'springBootLogo' },
+      { name: "REACT", color: "bg-sky-300", logo: 'React' },
+      { name: "TYPESCRIPT", color: "bg-blue-600", logo: 'Typescript' },
+      { name: "TAILWIND", color: "bg-cyan-600", logo: 'Tailwind' }
     ]
   },
-  {
-    title: "Naruto One Page Web",
-    description:
-      "Mi primera página, creada con conocimientos básicos de HTML y CSS, se encuentra en este portafolio por ser el punto de partida desde donde comencé. Fue realizada como proyecto del primer curso del ciclo de DAW.",
-    link: "https://narutobybricenodev.netlify.app/",
-    repository: "https://github.com/bricenocode/NarutoOnePageWeb",
-    img: "shotNaruto16_9",
+  { id: 1, link: "https://administradorcitaveterinaria.netlify.app/", repository: "", img: "shotCitaVeterinaria",
     tags: [
-      {name:"HTML",
-      color:"bg-orange-400",
-      logo:'Html'
-      },
-      {
-      name:"CSS",
-      color:"bg-blue-400",
-      logo:'Css'
-      }],
+      { name: "HTML", color: "bg-orange-400", logo: 'Html' },
+      { name: "JAVASCRIPT", color: "bg-yellow-400", logo: 'Javascript' },
+      { name: "TAILWIND", color: "bg-cyan-600", logo: 'Tailwind' }
+    ]
   },
+  { id: 2, link: "https://rest-api-ts-frontend-lyart.vercel.app/", repository: "https://github.com/bricenocode/rest_api_ts_frontend", img: "shotadministradorProductos",
+    tags: [
+      { name: "PostgreSQL", color: "bg-blue-600", logo: 'Postgreesql' },
+      { name: "NODE", color: "bg-green-300", logo: 'Node' },
+      { name: "REACT", color: "bg-sky-300", logo: 'React' },
+      { name: "TYPESCRIPT", color: "bg-blue-600", logo: 'Typescript' },
+      { name: "TAILWIND", color: "bg-cyan-600", logo: 'Tailwind' }
+    ]
+  },
+  { id: 3, link: "https://drinksappbybricenodev.netlify.app", repository: "https://github.com/bricenocode/bebidasReactTS", img: "shotBebidaReact",
+    tags: [
+      { name: "REACT", color: "bg-sky-300", logo: 'React' },
+      { name: "TYPESCRIPT", color: "bg-blue-600", logo: 'Typescript' },
+      { name: "Tailwind", color: "bg-cyan-600", logo: 'Tailwind' }
+    ]
+  },
+  { id: 4, link: "https://narutobybricenodev.netlify.app/", repository: "https://github.com/bricenocode/NarutoOnePageWeb", img: "shotNaruto16_9",
+    tags: [
+      { name: "HTML", color: "bg-orange-400", logo: 'Html' },
+      { name: "CSS", color: "bg-blue-400", logo: 'Css' }
+    ]
+  }
 ];
 ---
 
-<div class="flex flex-col justify-center items-center md:gap-x-10">
-  {
-    projects.map(project => (
-      <div class="w-[320px] sm:w-[600px] md:w-[700px] xl:w-[1200px] flex flex-col justify-start mx-auto items-center rounded p-5 md:flex-row gap-5  xl:gap-16 ">
-        <div
-          class="group w-[220px] h-[170px]  overflow-hidden rounded-xl shadow-lg transition-all duration-300 ease-in-out sm:w-[400px] sm:h-[250px] md:w-[500px] md:h-[250px]"
-        >
-          <div class="card w-full h-full bg-balck rounded-xl transition-transform duration-300 ease-in-out"  >
-            <img
-              src={`./${project.img}.webp`}
-              alt="Imagen de ejemplo"
-              class="image w-[350px] h-[200px] sm:h-auto sm:w-[300px] md:w-[500px] transition-transform duration-300 ease-in-out rounded-xl object-cover "
-            />
-          </div>
-        </div>
-        <div class="max-w-[350px] sm:max-w-[500px] md:max-w-[500px] lg:max-w-[600px] flex flex-col flex-wrap gap-2">
-          <h2 class="text-white text-opacity-90 font-semibold text-xl md:text-2xl">{project.title}</h2>
-          <div class="flex gap-2 flex-wrap">
-            {project.tags.map( tag => (
-            <div class={`flex items-center gap-2 max-h-5 rounded-md py-0.5 px-1.5 border border-transparent text-sm text-slate-600 transition-all shadow-sm ${tag.color}`}
-            > 
-            <img src={`./${tag.logo}.svg`} class="text-white max-w-4" alt="">
-            <p class="text-black">
-              {tag.name} 
-            </p>
-            </div>
-          ))}
-          </div>
-          <p class="mb-4 text-base max-w-[600px] sm:max-w-[330px] md:max-w-[400px] font-normal text-gray-500 dark:text-gray-400">
-            {project.description}
-          </p>
-          <div>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener"
-            >
-              <PillButtonLink>Visitar</PillButtonLink>
-            </a>
-            { project.repository && (
-            <a
-              href={project.repository}
-              target="_blank"
-              rel="noopener"
-            >
-              <PillButtonGit>Repositorio</PillButtonGit>
-            </a>
-            )}
-          </div>
+<div class="flex flex-col justify-center items-center md:gap-y-10">
+  {projectConfig.map((project, index) => (
+    <div class="w-[320px] sm:w-[600px] md:w-[700px] xl:w-[1200px] flex flex-col justify-start mx-auto items-center rounded p-5 md:flex-row gap-5 xl:gap-16">
+      <div class="group w-[220px] h-[170px] overflow-hidden rounded-xl shadow-lg transition-all duration-300 sm:w-[400px] sm:h-[250px] md:w-[500px] md:h-[250px] bg-black">
+        <div class="card w-full h-full transition-transform duration-300">
+          <img src={`./${project.img}.webp`} alt="Project" class="image w-full h-full rounded-xl object-cover" />
         </div>
       </div>
-    ))
-  }
+      <div class="max-w-[350px] sm:max-w-[500px] md:max-w-[500px] lg:max-w-[600px] flex flex-col flex-wrap gap-2">
+        <h2 id={`pj-title-${index}`} class="text-white text-opacity-90 font-semibold text-xl md:text-2xl"></h2>
+        <div class="flex gap-2 flex-wrap">
+          {project.tags.map(tag => (
+            <div class={`flex items-center gap-2 max-h-5 rounded-md py-0.5 px-1.5 border border-transparent text-sm transition-all shadow-sm ${tag.color}`}>
+              <img src={`./${tag.logo}.svg`} class="max-w-4" alt="" />
+              <p class="text-black">{tag.name}</p>
+            </div>
+          ))}
+        </div>
+        <p id={`pj-desc-${index}`} class="mb-4 text-base font-normal text-gray-400"></p>
+        <div class="flex gap-4">
+          <a href={project.link} target="_blank" rel="noopener">
+            <PillButtonLink><span class="btn-visit"></span></PillButtonLink>
+          </a>
+          {project.repository && (
+            <a href={project.repository} target="_blank" rel="noopener">
+              <PillButtonGit><span class="btn-repo"></span></PillButtonGit>
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  ))}
 </div>
 
-<style>
-  /* Configuración para el efecto de zoom y expansión */
-  .group:hover .image {
-    transform: scale(1.1); /* Zoom de la imagen */
+<script define:vars={{ uiData, projectConfig }}>
+  function translateProjects(lang) {
+    const data = uiData[lang].projects;
+    projectConfig.forEach((_, i) => {
+      const t = document.getElementById(`pj-title-${i}`);
+      const d = document.getElementById(`pj-desc-${i}`);
+      if (t) t.textContent = data[i].title;
+      if (d) d.textContent = data[i].description;
+    });
+    const isEn = lang === 'en';
+    document.querySelectorAll('.btn-visit').forEach(el => el.textContent = isEn ? 'Visit' : 'Visitar');
+    document.querySelectorAll('.btn-repo').forEach(el => el.textContent = isEn ? 'Repository' : 'Repositorio');
   }
-  .group:hover .card {
-    transform: scale(1.05); /* Expansión del contenedor */
-  }
-</style>
+  window.addEventListener('langChanged', (e) => translateProjects(e.detail));
+  translateProjects(localStorage.getItem('pref-lang') || 'en');
+</script>
