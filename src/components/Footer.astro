@@ -18,9 +18,10 @@ const date = new Date();
       </a>
       
       <ul class="flex flex-wrap items-center mb-6 text-[10px] sm:text-[15px] font-medium text-white sm:mb-0">
-        <li><a href="#about" id="footer-about" class="hover:underline me-4 md:me-6"></a></li>
-        <li><a href="#projects" id="footer-projects" class="hover:underline me-4 md:me-6"></a></li>
+        <li><a href="#main" id="footer-main" class="hover:underline me-4 md:me-6"></a></li>
+        <li><a href="#skills" id="footer-skills" class="hover:underline me-4 md:me-6"></a></li>
         <li><a href="#experience" id="footer-exp" class="hover:underline me-4 md:me-6"></a></li>
+        <li><a href="#projects" id="footer-projects" class="hover:underline me-4 md:me-6"></a></li>
       </ul>
     </div>
 
@@ -28,7 +29,6 @@ const date = new Date();
       <SocialPill href="https://www.instagram.com/migueldbg_/"><InstagramIcon class="size-6 rounded-full" /></SocialPill>
       <SocialPill href="https://www.linkedin.com/in/bricenodev/"><LinkdinIcon class="size-6 rounded-full text-white" /></SocialPill>
       <SocialPill href="https://github.com/bricenocode"><GitHubIcon class="size-6" /></SocialPill>
-      <SocialPill href="mailto:miguelbricenocode@gmail.com"><GmailIcon class="size-6 flex-grow" /></SocialPill>
     </nav>
 
     <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
@@ -43,12 +43,17 @@ const date = new Date();
     const nav = uiData[lang].nav;
     const rights = uiData[lang].footer.rights;
     
-    document.getElementById('footer-about').textContent = nav.about;
-    document.getElementById('footer-projects').textContent = nav.projects;
+    // Corregido: Los IDs deben coincidir con los definidos arriba
+    document.getElementById('footer-main').textContent = nav.home; // Usamos nav.home para el anclaje #main
+    document.getElementById('footer-skills').textContent = nav.skills;
     document.getElementById('footer-exp').textContent = nav.exp;
+    document.getElementById('footer-projects').textContent = nav.projects;
     document.getElementById('footer-rights').textContent = rights;
   }
 
   window.addEventListener('langChanged', (e) => updateFooter(e.detail));
-  updateFooter(localStorage.getItem('pref-lang') || 'en');
+  
+  // Inicialización
+  const currentLang = localStorage.getItem('pref-lang') || 'en';
+  updateFooter(currentLang);
 </script>
