@@ -1,108 +1,72 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-
-interface Props {
-  title: string;
-}
-
+interface Props { title: string; }
 const { title } = Astro.props;
 ---
-
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
-    <!-- Primary Meta Tags -->
-    <title>Portfolio - BricenoCode</title>
-    <meta name="title" content="Portfolio - BricenoCode" />
-    <meta
-      name="description"
-      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
-    />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://bricenocode.netlify.app/" />
-    <meta property="og:title" content="Portfolio - BricenoCode" />
-    <meta
-      property="og:description"
-      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
-    />
-    <meta
-      property="og:image"
-      content="./me.webp"
-    />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://bricenocode.netlify.app/" />
-    <meta property="twitter:title" content="Portfolio - BricenoCode" />
-    <meta
-      property="twitter:description"
-      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
-    />
-    <meta
-      property="twitter:image"
-      content="https://bricenocode.netlify.app/"
-    />
-
-    <meta name="title" content="Portfolio - BricenoCode" />
-    <meta
-      name="description"
-      content="Soy Miguel Briceño, un entusiasta de la tecnología y el desarrollo web, y disfruto del proceso creativo de convertir ideas en proyectos reales."
-    />
-    <meta
-      name="keywords"
-      content="portfolio, portafolio, programación, javascript, react, html, css. typescript, nodejs, postgresql, mongodb, astro, tailwind, desarrollo web, desarrollo"
-    />
-    <meta name="language" content="Spanish" />
-    <meta name="author" content="bricenocode" />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/147144442?s=400&u=4ae555345638b47f468f1b3fa44f2631201ab498&v=4"
-    />
-    <meta property="og:url" content="https://bricenocode.netlify.app/" />
-    <meta property="og:type" content="website" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="./3.webp" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Geist+Mono:wght@100..900&family=Oswald:wght@200..700&family=Parkinsans:wght@300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300;400;700;800&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <Header/>
+  <body class="bg-[#000000] text-white">
+    <div class="fixed top-4 right-4 z-[100] flex gap-1 bg-black/60 backdrop-blur-md p-1 rounded-full border border-white/10 shadow-xl">
+      <button id="btn-en" class="px-3 py-1 text-[10px] font-bold rounded-full transition-all duration-300">EN</button>
+      <button id="btn-es" class="px-3 py-1 text-[10px] font-bold rounded-full transition-all duration-300">ES</button>
+    </div>
+
+    <Header />
     <slot />
     <Footer />
+
+    <script is:inline>
+      const btnEn = document.getElementById('btn-en');
+      const btnEs = document.getElementById('btn-es');
+
+      function setLanguage(lang) {
+        localStorage.setItem('pref-lang', lang);
+        document.documentElement.lang = lang;
+        
+        window.dispatchEvent(new CustomEvent('langChanged', { detail: lang }));
+
+        if (lang === 'en') {
+          btnEn.classList.add('bg-green-500', 'text-black');
+          btnEn.classList.remove('text-white/50', 'hover:text-white');
+          
+          btnEs.classList.remove('bg-green-500', 'text-black');
+          btnEs.classList.add('text-white/50', 'hover:text-white');
+        } else {
+          btnEs.classList.add('bg-green-500', 'text-black');
+          btnEs.classList.remove('text-white/50', 'hover:text-white');
+          
+          btnEn.classList.remove('bg-green-500', 'text-black');
+          btnEn.classList.add('text-white/50', 'hover:text-white');
+        }
+      }
+
+      btnEn.onclick = () => setLanguage('en');
+      btnEs.onclick = () => setLanguage('es');
+
+      const storedLang = localStorage.getItem('pref-lang');
+      if (!storedLang) {
+        setLanguage('en');
+      } else {
+        setLanguage(storedLang);
+      }
+    </script>
+
   </body>
 </html>
 
-<style is:global>
-  :root {
-    color-scheme: light dark;
-  }
-  html {
-    font-family: "Parkinsans", sans-serif;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    background: -webkit-linear-gradient(180deg, #000000, #031414, #0b3131);
-    background: linear-gradient(180deg, #000000, #031414, #052423);
-    min-height: 100vh;
-  }
-
-  /* Si alguien desactivo esta opcion que no haga la animación */
-  @media (prefers-reduce-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-</style>
+    <style is:global>
+      html { font-family: "Parkinsans", sans-serif; scroll-behavior: smooth; }
+      body { 
+        background: radial-gradient(circle at top center, #052423 0%, #000000 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      .transition-all { transition: all 0.3s ease; }
+      </style>
