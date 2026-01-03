@@ -19,6 +19,7 @@ export const uiData = {
       description: "Backend Software Engineer specialized in building robust and scalable server-side architectures. I focus on creating innovative solutions that optimize business processes through Java, Spring Boot, and automation.",
       p2: "Passionate about clean code and system efficiency. I transform complex business logic into high-performance applications, always ensuring technical excellence and reliability in every project.",
       availability: "Available for new challenges",
+      cvBtn: "Download CV",
       stats: {
         expTitle: "Years of Experience",
         focusLabel: "FOCUS",
@@ -71,6 +72,7 @@ export const uiData = {
       description: "Ingeniero de Software Backend especializado en la construcción de arquitecturas robustas y escalables. Me enfoco en crear soluciones innovadoras que optimizan procesos de negocio a través de Java, Spring Boot y automatización.",
       p2: "Apasionado por el código limpio y la eficiencia de los sistemas. Transformo lógica de negocio compleja en aplicaciones de alto rendimiento, garantizando siempre la excelencia técnica y la fiabilidad.",
       availability: "Sistemas activo para nuevos retos",
+      cvBtn: "Descargar CV",
       stats: {
         expTitle: "Años de Experiencia",
         focusLabel: "FOCO",
