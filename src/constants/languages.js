@@ -27,22 +27,17 @@ export const uiData = {
       }
     },
     experience: [
-      {
-        date: 'Jan 2025 — Present',
-        title: 'Backend Software Engineer | Nter Tech Services',
-        description: 'Sole Backend Developer responsible for server-side logic. Engineered a CV Automation Module using Java and Spring Boot. Developed PowerShell scripts for document exports and Batch processing. Managing Oracle WebLogic deployments and optimizing performance using DTOs and MapStruct.'
-      },
-      {
-        date: 'July 2023 — June 2024',
-        title: 'Logistics Responsible | Jysk',
-        description: 'Led warehouse operations and inventory management. Developed strong leadership, multitasking, and agile problem-solving skills in high-pressure environments, ensuring 100% compliance with safety protocols.'
-      },
-      {
-        date: 'Nov 2019 — Dec 2021',
-        title: 'Store Manager | Restaurant Industry',
-        description: 'Managed full team operations, inventory control, and staff scheduling. Proven track record in conflict resolution and leading diverse teams to meet daily business objectives.'
-      }
-    ],
+    {
+      date: 'Dec 2024 — Present',
+      title: 'Backend Software Engineer | Nter Tech Services',
+      description: 'Backend Developer working on microservices architecture using Java 8 and Spring Boot. Experience building REST APIs, business logic validation, and error handling. Data persistence with Spring Data JPA, Hibernate, and Oracle DB. Implementation of native SQL queries, pagination, and CRUD operations. Use of DTOs with MapStruct and JSON serialization. Integration with corporate MDM systems via WebLogic. Asynchronous messaging with RabbitMQ and Spring AMQP. Batch and scheduled processes with Spring Scheduler. JWT authentication integrated with Azure AD/JWKS. Monitoring with Spring Boot Actuator. Email notifications with JavaMail. Testing with JUnit, Mockito, DBUnit, and JaCoCo. Dependency management with Maven and deployment using Docker. Use of Lombok, Apache Commons Lang, and Python scripts for automation.'
+    },
+    {
+      date: 'May 2023 — Nov 2024',
+      title: 'Fullstack Developer (Freelance)',
+      description: 'Development of REST APIs and microservices using Java and Spring Boot. Automation scripts and support tools built with Python to optimize tasks. Frontend development with Angular, React, and TypeScript, styled using CSS and Tailwind. Database design and security with PostgreSQL and JWT authentication. Containerization with Docker and technical documentation using Swagger for API integration.'
+    }
+  ],
     projects: [
       { title: "DevTrack", description: "Task and project manager for developers with real-time chat and collaboration. Built with JWT authentication for high security. Backend in Spring Boot." },
       { title: "Appointment Manager", description: "Veterinary patient scheduler. Developed using modern JS, focused on CRUD best practices and DOM manipulation." },
@@ -55,7 +50,7 @@ export const uiData = {
   es: {
     hero: {
       name: "BRICENOCODE 💻",
-      experience: "+2 años de experiencia en ingeniería.",
+      experience: "+2 años de experiencia en desarrollo.",
       role: "Ingeniero de Software Backend.",
       location: "Madrid, España.",
       ready: "¡Listo para escalar tus sistemas!",
@@ -79,23 +74,18 @@ export const uiData = {
         focusValue: "Mejora Continua"
       }
     },
-    experience: [
-      {
-        date: 'Enero 2025 — Presente',
-        title: 'Ingeniero de Software Backend | Nter Tech Services',
-        description: 'Único Desarrollador Backend a cargo de la lógica del servidor. Módulo de Automatización de CVs con Java y Spring Boot. Scripts en PowerShell para exportación de datos y procesos Batch. Gestión de Oracle WebLogic.'
-      },
-      {
-        date: 'Julio 2023 — Junio 2024',
-        title: 'Responsable de Logística | Jysk',
-        description: 'Liderazgo de almacén e inventarios. Resolución ágil de problemas en entornos de alta presión.'
-      },
-      {
-        date: 'Noviembre 2019 — Diciembre 2021',
-        title: 'Gerente de Tienda | Sector Restauración',
-        description: 'Gestión completa de equipos y operaciones diarias para alcanzar objetivos de negocio.'
-      }
-    ],
+  experience: [
+    {
+      date: 'Dic 2024 — Presente',
+      title: 'Ingeniero de Software Backend | Nter Tech Services',
+      description: 'Desarrollador backend trabajando con arquitectura de microservicios usando Java 8 y Spring Boot. Desarrollo de APIs REST, validación de lógica de negocio y manejo de errores. Persistencia con Spring Data JPA, Hibernate y base de datos Oracle. Implementación de consultas SQL nativas, paginación y operaciones CRUD. Uso de DTOs con MapStruct y serialización JSON. Integración con sistemas corporativos MDM mediante WebLogic. Mensajería asíncrona con RabbitMQ y Spring AMQP. Procesos batch y programados con Spring Scheduler. Autenticación JWT integrada con Azure AD/JWKS. Monitorización con Spring Boot Actuator. Envío de correos con JavaMail. Testing con JUnit, Mockito, DBUnit y JaCoCo. Gestión de dependencias con Maven y despliegue con Docker. Uso de Lombok, Apache Commons Lang y scripts en Python para automatización.'
+    },
+    {
+      date: 'May 2023 — Nov 2024',
+      title: 'Desarrollador Fullstack (Freelance)',
+      description: 'Desarrollo de APIs REST y microservicios utilizando Java y Spring Boot. Creación de scripts y herramientas de automatización con Python para optimizar procesos. Desarrollo frontend con Angular, React y TypeScript, usando CSS y Tailwind. Diseño de bases de datos y seguridad con PostgreSQL y autenticación JWT. Contenerización con Docker y documentación técnica con Swagger para facilitar integraciones.'
+    }
+  ] ,
     projects: [
       { title: "DevTrack", description: "Administrador de tareas con chat en tiempo real y autenticación JWT. Backend en SpringBoot." },
       { title: "Administrador de Citas", description: "Agenda de Pacientes de Veterinaria con CRUD y manejo avanzado del DOM." },
