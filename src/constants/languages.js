@@ -20,7 +20,7 @@ export const uiData = {
       p2: "I care about clean code, solid architecture, and practical solutions that make complex business processes easier to maintain. Currently preparing for the AWS Certified Developer - Associate certification.",
       availability: "Available for new challenges",
       cvBtn: "Download CV",
-      stats: { expTitle: "Years of Experience", focusLabel: "B2 ENGLISH", focusValue: "Technical & conversational" }
+      stats: { expTitle: "Years of Experience", focusLabel: "JAVA BACKEND", focusValue: "Microservices & REST APIs" }
     },
     experience: [
       {
@@ -71,7 +71,7 @@ export const uiData = {
       p2: "Me importan el código limpio, una arquitectura sólida y las soluciones prácticas que facilitan el mantenimiento de procesos de negocio complejos. Actualmente me preparo para la certificación AWS Certified Developer - Associate.",
       availability: "Disponible para nuevos retos",
       cvBtn: "Descargar CV",
-      stats: { expTitle: "Años de Experiencia", focusLabel: "INGLÉS B2", focusValue: "Técnico y conversacional" }
+      stats: { expTitle: "Años de Experiencia", focusLabel: "BACKEND JAVA", focusValue: "Microservicios y APIs REST" }
     },
     experience: [
       {
