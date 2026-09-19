@@ -17,10 +17,10 @@ export const uiData = {
     about: {
       title: "Miguel Briceño",
       description: "Java Backend Developer specialized in microservices and REST APIs with Java 8/17 and Spring Boot in corporate environments. I build reliable services, integrations, and data flows with a focus on clean, maintainable software.",
-      p2: "Currently maintaining an MDM solution made up of 4 microservices and 31 documented REST endpoints, integrating SOAP, EJB, RabbitMQ, Oracle, Azure AD, and automated testing. Preparing for the AWS Certified Developer - Associate certification.",
+      p2: "I care about clean code, solid architecture, and practical solutions that make complex business processes easier to maintain. Currently preparing for the AWS Certified Developer - Associate certification.",
       availability: "Available for new challenges",
       cvBtn: "Download CV",
-      stats: { expTitle: "Years of Experience", focusLabel: "4 SERVICES", focusValue: "31 REST endpoints" }
+      stats: { expTitle: "Years of Experience", focusLabel: "B2 ENGLISH", focusValue: "Technical & conversational" }
     },
     experience: [
       {
@@ -68,10 +68,10 @@ export const uiData = {
     about: {
       title: "Miguel Briceño",
       description: "Desarrollador Backend Java especializado en microservicios y APIs REST con Java 8/17 y Spring Boot en entornos corporativos. Creo servicios, integraciones y flujos de datos fiables, con foco en un software limpio y mantenible.",
-      p2: "Actualmente mantengo una solución MDM compuesta por 4 microservicios y 31 endpoints REST documentados, integrando SOAP, EJB, RabbitMQ, Oracle, Azure AD y testing automatizado. En preparación para la certificación AWS Certified Developer - Associate.",
+      p2: "Me importan el código limpio, una arquitectura sólida y las soluciones prácticas que facilitan el mantenimiento de procesos de negocio complejos. Actualmente me preparo para la certificación AWS Certified Developer - Associate.",
       availability: "Disponible para nuevos retos",
       cvBtn: "Descargar CV",
-      stats: { expTitle: "Años de Experiencia", focusLabel: "4 SERVICIOS", focusValue: "31 endpoints REST" }
+      stats: { expTitle: "Años de Experiencia", focusLabel: "INGLÉS B2", focusValue: "Técnico y conversacional" }
     },
     experience: [
       {
