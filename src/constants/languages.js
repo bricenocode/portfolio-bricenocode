@@ -3,47 +3,50 @@ export const uiData = {
     hero: {
       name: "BRICENOCODE 💻",
       experience: "2+ years of software engineering experience.",
-      role: "Backend Software Engineer.",
+      role: "Java Backend Developer.",
       location: "Madrid, Spain.",
-      ready: "Ready to scale your systems!",
+      ready: "Ready to build reliable systems!",
       badge: "What are we developing?"
     },
     tech: {
       title: "Technical Skills",
-      subtitle: "Specialized in scalable backend architectures and modern automation tools."
+      subtitle: "Java backend development, distributed systems, automation, and modern web interfaces."
     },
-    nav: { home: "Home", skills: "Skills", exp: "Experience", projects: "Projects" },
+    nav: { home: "Home", skills: "Skills", exp: "Experience", education: "Education", projects: "Projects" },
     sections: { about: "About Me", skills: "Technical Skills", exp: "Professional Experience", projects: "Projects" },
     about: {
       title: "Miguel Briceño",
-      description: "Backend Software Engineer specialized in building robust and scalable server-side architectures. I focus on creating innovative solutions that optimize business processes through Java, Spring Boot, and automation.",
-      p2: "Passionate about clean code and system efficiency. I transform complex business logic into high-performance applications, always ensuring technical excellence and reliability in every project.",
+      description: "Java Backend Developer specialized in microservices and REST APIs with Java 8/17 and Spring Boot in corporate environments. I build reliable services, integrations, and data flows with a focus on clean, maintainable software.",
+      p2: "Currently maintaining an MDM solution made up of 4 microservices and 31 documented REST endpoints, integrating SOAP, EJB, RabbitMQ, Oracle, Azure AD, and automated testing. Preparing for the AWS Certified Developer - Associate certification.",
       availability: "Available for new challenges",
       cvBtn: "Download CV",
-      stats: {
-        expTitle: "Years of Experience",
-        focusLabel: "FOCUS",
-        focusValue: "Continuous Improvement"
-      }
+      stats: { expTitle: "Years of Experience", focusLabel: "4 SERVICES", focusValue: "31 REST endpoints" }
     },
     experience: [
-    {
-      date: 'Dec 2024 — Present',
-      title: 'Backend Software Engineer | Nter Tech Services',
-      description: 'Backend Developer working on microservices architecture using Java 8 and Spring Boot. Experience building REST APIs, business logic validation, and error handling. Data persistence with Spring Data JPA, Hibernate, and Oracle DB. Implementation of native SQL queries, pagination, and CRUD operations. Use of DTOs with MapStruct and JSON serialization. Integration with corporate MDM systems via WebLogic. Asynchronous messaging with RabbitMQ and Spring AMQP. Batch and scheduled processes with Spring Scheduler. JWT authentication integrated with Azure AD/JWKS. Monitoring with Spring Boot Actuator. Email notifications with JavaMail. Testing with JUnit, Mockito, DBUnit, and JaCoCo. Dependency management with Maven and deployment using Docker. Use of Lombok, Apache Commons Lang, and Python scripts for automation.'
+      {
+        date: "Dec 2024 — Present",
+        title: "Java Backend Developer | Nter Tech Services",
+        description: "Development and maintenance of 4 Java 8/17 microservices with Spring Boot for master data management and synchronization, across a codebase of approximately 333 classes and 40,500 lines of code. Work includes 31 Swagger/OpenAPI-documented REST endpoints, SOAP and EJB integrations, business-rule validation, Spring Data JPA/Hibernate with Oracle and native SQL optimization, RabbitMQ and Spring AMQP messaging with retries, batch scheduling, Azure AD/JWT/JWKS security, Actuator monitoring, JUnit/Mockito/DBUnit testing, JaCoCo coverage, and PowerShell/Python automation in Maven, Git, and Linux environments."
+      },
+      {
+        date: "May 2023 — Nov 2024",
+        title: "Full Stack Developer | Bricenocode (freelance projects)",
+        description: "Built custom applications with Java, Spring Boot, microservices, REST APIs, PostgreSQL, and Swagger/OpenAPI. Created responsive interfaces with Angular, React, TypeScript, and Tailwind CSS, adding JWT security, Docker containerization, Python automation, and third-party service integrations."
+      }
+    ],
+    education: {
+      title: "Education & Certifications",
+      degree: "Higher Technician Diploma in Web Application Development (DAW)",
+      school: "Universidad Alfonso X el Sabio · Madrid · 2022 — 2024",
+      details: "GPA: 9.8/10 · Java, PHP, JavaScript, TypeScript, Oracle, MongoDB, Linux and Windows.",
+      certification: "AWS Certified Developer - Associate · In preparation"
     },
-    {
-      date: 'May 2023 — Nov 2024',
-      title: 'Fullstack Developer (Freelance)',
-      description: 'Development of REST APIs and microservices using Java and Spring Boot. Automation scripts and support tools built with Python to optimize tasks. Frontend development with Angular, React, and TypeScript, styled using CSS and Tailwind. Database design and security with PostgreSQL and JWT authentication. Containerization with Docker and technical documentation using Swagger for API integration.'
-    }
-  ],
     projects: [
-      { title: "DevTrack", description: "Task and project manager for developers with real-time chat and collaboration. Built with JWT authentication for high security. Backend in Spring Boot." },
-      { title: "Appointment Manager", description: "Veterinary patient scheduler. Developed using modern JS, focused on CRUD best practices and DOM manipulation." },
-      { title: "FullStack Product Manager", description: "Built with the PERN stack. Features a REST API with Express/Node, Swagger documentation, and a React frontend with Zod and Zustand." },
-      { title: "Drink Recipe Finder", description: "React app using Zustand (Slice Pattern) for state management and Zod for API validation and type inference." },
-      { title: "Naruto One Page", description: "My first project, built with basic HTML/CSS. It represents my starting point in the world of development." }
+      { title: "DevTrack", description: "Task and project manager for developers with real-time chat and collaboration. Built with JWT authentication and a Spring Boot backend." },
+      { title: "Appointment Manager", description: "Veterinary patient scheduler developed with modern JavaScript, focused on CRUD best practices and DOM manipulation." },
+      { title: "FullStack Product Manager", description: "PERN application with an Express/Node REST API, Swagger documentation, and a React frontend using Zod and Zustand." },
+      { title: "Drink Recipe Finder", description: "React application using Zustand with the Slice Pattern for state management and Zod for API validation and type inference." },
+      { title: "Naruto One Page", description: "My first project, built with basic HTML and CSS, representing the starting point of my development journey." }
     ],
     footer: { rights: "All rights reserved." }
   },
@@ -51,47 +54,50 @@ export const uiData = {
     hero: {
       name: "BRICENOCODE 💻",
       experience: "+2 años de experiencia en desarrollo.",
-      role: "Ingeniero de Software Backend.",
+      role: "Desarrollador Backend Java.",
       location: "Madrid, España.",
-      ready: "¡Listo para escalar tus sistemas!",
+      ready: "¡Listo para construir sistemas fiables!",
       badge: "¿Qué vamos a desarrollar?"
     },
     tech: {
       title: "Habilidades Técnicas",
-      subtitle: "Especializado en arquitecturas backend escalables y herramientas de automatización modernas."
+      subtitle: "Desarrollo backend con Java, sistemas distribuidos, automatización e interfaces web modernas."
     },
-    nav: { home: "Inicio", skills: "Tecnologías", exp: "Experiencia", projects: "Proyectos" },
+    nav: { home: "Inicio", skills: "Tecnologías", exp: "Experiencia", education: "Formación", projects: "Proyectos" },
     sections: { about: "Sobre mí", skills: "Habilidades Técnicas", exp: "Experiencia Profesional", projects: "Proyectos" },
     about: {
       title: "Miguel Briceño",
-      description: "Ingeniero de Software Backend especializado en la construcción de arquitecturas robustas y escalables. Me enfoco en crear soluciones innovadoras que optimizan procesos de negocio a través de Java, Spring Boot y automatización.",
-      p2: "Apasionado por el código limpio y la eficiencia de los sistemas. Transformo lógica de negocio compleja en aplicaciones de alto rendimiento, garantizando siempre la excelencia técnica y la fiabilidad.",
+      description: "Desarrollador Backend Java especializado en microservicios y APIs REST con Java 8/17 y Spring Boot en entornos corporativos. Creo servicios, integraciones y flujos de datos fiables, con foco en un software limpio y mantenible.",
+      p2: "Actualmente mantengo una solución MDM compuesta por 4 microservicios y 31 endpoints REST documentados, integrando SOAP, EJB, RabbitMQ, Oracle, Azure AD y testing automatizado. En preparación para la certificación AWS Certified Developer - Associate.",
       availability: "Disponible para nuevos retos",
       cvBtn: "Descargar CV",
-      stats: {
-        expTitle: "Años de Experiencia",
-        focusLabel: "FOCO",
-        focusValue: "Mejora Continua"
+      stats: { expTitle: "Años de Experiencia", focusLabel: "4 SERVICIOS", focusValue: "31 endpoints REST" }
+    },
+    experience: [
+      {
+        date: "Dic 2024 — Actualidad",
+        title: "Desarrollador Backend Java | Nter Tech Services",
+        description: "Desarrollo y mantenimiento de 4 microservicios Java 8/17 con Spring Boot para la gestión y sincronización de información maestra, sobre una base de aproximadamente 333 clases y 40.500 líneas de código. El trabajo incluye 31 endpoints REST documentados con Swagger/OpenAPI, integraciones SOAP y EJB, validación de reglas de negocio, Spring Data JPA/Hibernate con Oracle y optimización de SQL nativo, mensajería con RabbitMQ y Spring AMQP con reintentos, procesos batch, seguridad con Azure AD/JWT/JWKS, monitorización con Actuator, testing con JUnit/Mockito/DBUnit, cobertura con JaCoCo y automatización con PowerShell/Python en entornos Maven, Git y Linux."
+      },
+      {
+        date: "May 2023 — Nov 2024",
+        title: "Desarrollador Full Stack | Bricenocode (proyectos freelance)",
+        description: "Desarrollo de aplicaciones a medida con Java, Spring Boot, microservicios, APIs REST, PostgreSQL y documentación Swagger/OpenAPI. Creación de interfaces responsive con Angular, React, TypeScript y Tailwind CSS, incorporando seguridad JWT, Docker, automatización con Python e integraciones con servicios de terceros."
       }
+    ],
+    education: {
+      title: "Formación y certificaciones",
+      degree: "Técnico Superior en Desarrollo de Aplicaciones Web (DAW)",
+      school: "Universidad Alfonso X el Sabio · Madrid · 2022 — 2024",
+      details: "Nota media: 9,8/10 · Java, PHP, JavaScript, TypeScript, Oracle, MongoDB, Linux y Windows.",
+      certification: "AWS Certified Developer - Associate · En preparación"
     },
-  experience: [
-    {
-      date: 'Dic 2024 — Presente',
-      title: 'Ingeniero de Software Backend | Nter Tech Services',
-      description: 'Desarrollador backend trabajando con arquitectura de microservicios usando Java 8 y Spring Boot. Desarrollo de APIs REST, validación de lógica de negocio y manejo de errores. Persistencia con Spring Data JPA, Hibernate y base de datos Oracle. Implementación de consultas SQL nativas, paginación y operaciones CRUD. Uso de DTOs con MapStruct y serialización JSON. Integración con sistemas corporativos MDM mediante WebLogic. Mensajería asíncrona con RabbitMQ y Spring AMQP. Procesos batch y programados con Spring Scheduler. Autenticación JWT integrada con Azure AD/JWKS. Monitorización con Spring Boot Actuator. Envío de correos con JavaMail. Testing con JUnit, Mockito, DBUnit y JaCoCo. Gestión de dependencias con Maven y despliegue con Docker. Uso de Lombok, Apache Commons Lang y scripts en Python para automatización.'
-    },
-    {
-      date: 'May 2023 — Nov 2024',
-      title: 'Desarrollador Fullstack (Freelance)',
-      description: 'Desarrollo de APIs REST y microservicios utilizando Java y Spring Boot. Creación de scripts y herramientas de automatización con Python para optimizar procesos. Desarrollo frontend con Angular, React y TypeScript, usando CSS y Tailwind. Diseño de bases de datos y seguridad con PostgreSQL y autenticación JWT. Contenerización con Docker y documentación técnica con Swagger para facilitar integraciones.'
-    }
-  ] ,
     projects: [
-      { title: "DevTrack", description: "Administrador de tareas con chat en tiempo real y autenticación JWT. Backend en SpringBoot." },
-      { title: "Administrador de Citas", description: "Agenda de Pacientes de Veterinaria con CRUD y manejo avanzado del DOM." },
-      { title: "FullStack Administrador", description: "Realizado con stack PERN, Swagger para documentación y Zustand para estado." },
-      { title: "Buscador de Bebidas", description: "Uso de React Routing, Zustand y Zod para validación de peticiones API." },
-      { title: "Naruto One Page", description: "Mi primera página web, el punto de partida de mi carrera como desarrollador." }
+      { title: "DevTrack", description: "Administrador de tareas y proyectos para desarrolladores con chat en tiempo real y colaboración. Autenticación JWT y backend en Spring Boot." },
+      { title: "Administrador de Citas", description: "Agenda de pacientes de veterinaria desarrollada con JavaScript moderno y centrada en buenas prácticas CRUD y manipulación del DOM." },
+      { title: "Administrador Full Stack", description: "Aplicación PERN con API REST en Express/Node, documentación Swagger y frontend React con Zod y Zustand." },
+      { title: "Buscador de Bebidas", description: "Aplicación React con Zustand y Slice Pattern para el estado, y Zod para validar peticiones e inferir tipos." },
+      { title: "Naruto One Page", description: "Mi primer proyecto, construido con HTML y CSS, que representa el inicio de mi trayectoria como desarrollador." }
     ],
     footer: { rights: "Todos los derechos reservados." }
   }

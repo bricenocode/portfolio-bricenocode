@@ -29,6 +29,13 @@ import { uiData } from "../constants/languages.js";
       <p id="nav-exp" class="hidden group-hover:block absolute left-10 text-green-200 bg-[#052423] p-2 rounded-md border border-green-400/30 text-nowrap"></p>
     </a> 
 
+    <a href="#education" class="group relative flex items-center space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 7l9-4 9 4-9 4-9-4Z"></path><path d="M7 9v5c2.8 2.2 7.2 2.2 10 0V9"></path><path d="M21 10v6"></path>
+      </svg>
+      <p id="nav-education" class="hidden group-hover:block absolute left-10 text-green-200 bg-[#052423] p-2 rounded-md border border-green-400/30 text-nowrap"></p>
+    </a>
+
     <a href="#projects" class="group relative flex items-center space-x-2">
       <svg class="size-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"></path>
@@ -45,6 +52,7 @@ import { uiData } from "../constants/languages.js";
     document.getElementById('nav-home').textContent = nav.home;
     document.getElementById('nav-skills').textContent = nav.skills;
     document.getElementById('nav-exp').textContent = nav.exp;
+    document.getElementById('nav-education').textContent = nav.education;
     document.getElementById('nav-projects').textContent = nav.projects;
   }
 
